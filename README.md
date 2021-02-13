@@ -4,7 +4,7 @@ Baseado no curso da Alura [Google Cloud Serverless: Crie aplicações robustas e
 
 # Tópicos
 
-1. Conectando com o Google Cloud Ver primeiro vídeo
+1. Conectando com o Google Cloud
 2. Trabalhando com BigQuery
 3. Consumo de dados com API
 4. Docker com Container Registry
