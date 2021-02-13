@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: api
+  name: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: api
+    spec:
+      containers:
+      - image: gcr.io/gcp-lab-296823/forum-alura
+        ports:
+        - containerPort: 3000
+        env:
+        - name: USER
+          valueFrom:
+            secretKeyRef:
+              name: forum-alura-api-secret
+              key: USER
+        - name: PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: forum-alura-api-secret
+              key: PASSWORD
+        name: forum-alura
+        resources: {}
+status: {}
